@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+python-dotenv
+pipecat-ai[webrtc,daily,deepgram,cartesia,openai,silero,websocket,elevenlabs,google,azure]
+pipecat-ai-small-webrtc-prebuilt
