@@ -4,6 +4,8 @@ import os
 from contextlib import asynccontextmanager
 from typing import Dict
 
+from utils import system_message
+
 from dotenv import load_dotenv
 
 import uvicorn
@@ -19,7 +21,8 @@ from deepgram import LiveOptions
 from pipecat.transcriptions.language import Language
 from pipecat.services.elevenlabs.tts import ElevenLabsTTSService, Language as ElevenLabsLanguage
 
-
+from pipecat.adapters.schemas.function_schema import FunctionSchema
+from pipecat.adapters.schemas.tools_schema import ToolsSchema
 from pipecat.audio.vad.silero import SileroVADAnalyzer
 from pipecat.pipeline.pipeline import Pipeline
 from pipecat.pipeline.runner import PipelineRunner
@@ -29,7 +32,12 @@ from pipecat.transports.base_transport import TransportParams
 from pipecat.transports.network.small_webrtc import SmallWebRTCTransport
 from pipecat.transports.network.webrtc_connection import IceServer, SmallWebRTCConnection
 
+from email_tool import _send_email_tool
+
+
 load_dotenv(override=True)
+
+
 
 app = FastAPI()
 
@@ -88,14 +96,34 @@ async def run_example(webrtc_connection: SmallWebRTCConnection):
         model="gpt-4o"  # e.g., "gpt-4o"
     )
 
+    llm.register_function("send_email", _send_email_tool)
+
+    _send_email_tool_schema = FunctionSchema(
+        name = "send_email",
+        description = "Email the details of the next scheduled meeting.",
+        properties = {
+            "subject": {
+                "type": "string",
+                "description": "Subject of the email"
+            },
+            "plain_text_body": {
+                "type": "string",
+                "description": "Content of the email"
+            }
+        },
+        required = ["subject", "plain_text_body"]
+    )
+
+    tools = ToolsSchema(standard_tools=[_send_email_tool_schema])
+
     messages = [
         {
             "role": "system",
-            "content": "You are a helpful LLM in a WebRTC call. Your goal is to demonstrate your capabilities in a succinct way. Your output will be converted to audio so don't include special characters in your answers. Respond to what the user said in a creative and helpful way.",
+            "content": system_message,
         },
     ]
 
-    context = OpenAILLMContext(messages)
+    context = OpenAILLMContext(messages, tools)
     context_aggregator = llm.create_context_aggregator(context)
 
     pipeline = Pipeline(
