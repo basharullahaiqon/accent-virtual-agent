@@ -71,6 +71,11 @@ Before running this application, ensure you have:
    # ElevenLabs Configuration
    ELEVENLABS_API_KEY=your_elevenlabs_api_key
    ELEVENLABS_VOICE_ID=your_elevenlabs_voice_id
+
+   # Azure Communication Services (Email)
+   ACS_CONNECTION_STRING=your_acs_connection_string
+   SENDER_ADDRESS=your_sender_email@domain.com
+   RECIPIENT_ADDRESS=your_recipient_email@domain.com
    ```
 
    ## 📝 ElevenLabs Setup Guide
@@ -359,12 +364,6 @@ Before running this application, ensure you have:
    - **Cost Optimization**: Monitor and optimize email sending patterns
    - **Quota Management**: Set up spending limits to control costs
 
-   ```env
-   # Azure Communication Services (Email)
-   ACS_CONNECTION_STRING=your_acs_connection_string
-   SENDER_ADDRESS=your_sender_email@domain.com
-   RECIPIENT_ADDRESS=your_recipient_email@domain.com
-   ```
 
 ## 🎮 Usage
 
