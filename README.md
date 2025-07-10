@@ -71,62 +71,64 @@ Before running this application, ensure you have:
    # ElevenLabs Configuration
    ELEVENLABS_API_KEY=your_elevenlabs_api_key
    ELEVENLABS_VOICE_ID=your_elevenlabs_voice_id
-   
-   > **📝 ElevenLabs Setup Guide**
-   > 
-   > ElevenLabs provides high-quality text-to-speech synthesis. Follow these detailed steps to set up your ElevenLabs account and obtain the required credentials:
-   > 
-   > ### Step 1: Create ElevenLabs Account
-   > 1. Visit [ElevenLabs.io](https://elevenlabs.io)
-   > 2. Click "Sign Up" and create a free account
-   > 3. Verify your email address
-   > 4. Complete your profile setup
-   > 
-   > ### Step 2: Get Your API Key
-   > 1. Log in to your ElevenLabs dashboard
-   > 2. Navigate to your profile settings (usually in the top-right corner)
-   > 3. Look for the "API Key" section
-   > 4. Click "Copy" to copy your API key
-   > 5. **Important**: Keep this key secure and never share it publicly
-   > 
-    ![ElevenLabs API Key Setup](https://raw.githubusercontent.com/basharullahaiqon/accent-virtual-agent/refs/heads/main/imgs/api_elevenlabs.png)
-   > 
-   > ### Step 3: Choose Your Voice
-   > 1. Go to the "Voice Library" section in your dashboard
-   > 2. Browse through available voices (free tier includes several options)
-   > 3. Listen to voice samples to find one that matches your needs
-   > 4. Consider factors like:
-   >    - **Language**: Ensure the voice supports your target language
-   >    - **Tone**: Professional, friendly, or authoritative
-   >    - **Gender**: Male or female voice preference
-   >    - **Accent**: Regional accent preferences
-   > 
-   > ### Step 4: Get Your Voice ID
-   > 1. Select your preferred voice from the Voice Library
-   > 2. Click on the voice to open its details
-   > 3. Look for the "Voice ID" field (usually a long string of characters)
-   > 4. Copy the Voice ID
-   > 5. The Voice ID I am using is "NpVSXJvYSdIbjOaMbShj"
-   > 
-    ![ElevenLabs Voice ID Setup](https://raw.githubusercontent.com/basharullahaiqon/accent-virtual-agent/refs/heads/main/imgs/voiceid_elevenlabs.png)
-   > 
-   > ### Step 5: Test Your Setup
-   > 1. Add your API key and Voice ID to the `.env` file
-   > 2. Run the application
-   > 3. Test the voice synthesis to ensure it's working correctly
-   > 
-   > ### Voice Configuration Tips
-   > - **Free Tier Limits**: Free accounts have monthly character limits
-   > - **Voice Cloning**: You can clone your own voice (requires paid plan)
-   > - **Custom Voices**: Create custom voices for specific use cases
-   > - **Voice Settings**: Adjust stability, similarity, and style in the code
-   > 
-   > ### Troubleshooting ElevenLabs
-   > - **API Key Invalid**: Ensure you've copied the full key without extra spaces
-   > - **Voice ID Not Found**: Verify the Voice ID exists in your account
-   > - **Rate Limits**: Free tier has usage limits; consider upgrading for production use
-   > - **Audio Quality**: Adjust stability and similarity settings for better quality
+   ```
 
+   ## 📝 ElevenLabs Setup Guide
+
+   ElevenLabs provides high-quality text-to-speech synthesis. Follow these detailed steps to set up your ElevenLabs account and obtain the required credentials:
+
+   ### Step 1: Create ElevenLabs Account
+   1. Visit [ElevenLabs.io](https://elevenlabs.io)
+   2. Click "Sign Up" and create a free account
+   3. Verify your email address
+   4. Complete your profile setup
+
+   ### Step 2: Get Your API Key
+   1. Log in to your ElevenLabs dashboard
+   2. Navigate to your profile settings (usually in the top-right corner)
+   3. Look for the "API Key" section
+   4. Click "Copy" to copy your API key
+   5. **Important**: Keep this key secure and never share it publicly
+
+   ![ElevenLabs API Key Setup](imgs/api_elevenlabs.png)
+
+   ### Step 3: Choose Your Voice
+   1. Go to the "Voice Library" section in your dashboard
+   2. Browse through available voices (free tier includes several options)
+   3. Listen to voice samples to find one that matches your needs
+   4. Consider factors like:
+      - **Language**: Ensure the voice supports your target language
+      - **Tone**: Professional, friendly, or authoritative
+      - **Gender**: Male or female voice preference
+      - **Accent**: Regional accent preferences
+
+   ### Step 4: Get Your Voice ID
+   1. Select your preferred voice from the Voice Library
+   2. Click on the voice to open its details
+   3. Look for the "Voice ID" field (usually a long string of characters)
+   4. Copy the Voice ID
+   5. The Voice ID I am using is "NpVSXJvYSdIbjOaMbShj"
+
+   ![ElevenLabs Voice ID Setup](imgs/voiceid_elevenlabs.png)
+
+   ### Step 5: Test Your Setup
+   1. Add your API key and Voice ID to the `.env` file
+   2. Run the application
+   3. Test the voice synthesis to ensure it's working correctly
+
+   ### Voice Configuration Tips
+   - **Free Tier Limits**: Free accounts have monthly character limits
+   - **Voice Cloning**: You can clone your own voice (requires paid plan)
+   - **Custom Voices**: Create custom voices for specific use cases
+   - **Voice Settings**: Adjust stability, similarity, and style in the code
+
+   ### Troubleshooting ElevenLabs
+   - **API Key Invalid**: Ensure you've copied the full key without extra spaces
+   - **Voice ID Not Found**: Verify the Voice ID exists in your account
+   - **Rate Limits**: Free tier has usage limits; consider upgrading for production use
+   - **Audio Quality**: Adjust stability and similarity settings for better quality
+
+   ```env
    # Azure Communication Services (Email)
    ACS_CONNECTION_STRING=your_acs_connection_string
    SENDER_ADDRESS=your_sender_email@domain.com
