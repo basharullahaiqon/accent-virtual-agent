@@ -89,7 +89,7 @@ Before running this application, ensure you have:
    > 4. Click "Copy" to copy your API key
    > 5. **Important**: Keep this key secure and never share it publicly
    > 
-   > ![ElevenLabs API Key Setup](./imgs/api%20(eleven%20labs).png)
+   > ![ElevenLabs API Key Setup](imgs/api (eleven labs).png)
    > 
    > ### Step 3: Choose Your Voice
    > 1. Go to the "Voice Library" section in your dashboard
@@ -108,7 +108,7 @@ Before running this application, ensure you have:
    > 4. Copy the Voice ID
    > 5. The Voice ID I am using is "NpVSXJvYSdIbjOaMbShj"
    > 
-   > ![ElevenLabs Voice ID Setup](./imgs/voice%20id%20(eleven%20labs).png)
+   > ![ElevenLabs Voice ID Setup](imgs/voice id (eleven labs).png)
    > 
    > ### Step 5: Test Your Setup
    > 1. Add your API key and Voice ID to the `.env` file
