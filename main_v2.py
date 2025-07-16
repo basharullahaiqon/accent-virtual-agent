@@ -207,14 +207,12 @@ async def lifespan(app: FastAPI):
     pcs_map.clear()
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Pipecat Bot Runner")
-    parser.add_argument(
-        "--host", default="localhost", help="Host for HTTP server (default: localhost)"
-    )
-    parser.add_argument(
-        "--port", type=int, default=7860, help="Port for HTTP server (default: 7860)"
-    )
-    args = parser.parse_args()
-
-    uvicorn.run(app, host=args.host, port=args.port)
+# Accent Virtual Agent - FastAPI app
+#
+# To run locally:
+#   python main_v2.py
+#
+# To run in Azure App Service (or with Uvicorn):
+#   uvicorn main_v2:app --host 0.0.0.0 --port 8000
+#
+# Azure will use the 'app' object below as the entry point.
